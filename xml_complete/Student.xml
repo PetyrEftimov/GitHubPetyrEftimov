@@ -1,0 +1,14 @@
+<?xml version="1.0"?>
+<Students xmlns="http://www.w3.org/TR/html4/">
+	<Student id=1="">
+		<Name>Yassen Petrov</Name>
+		<Tel>0887654321</Tel>
+		<Bird_Date>04.07.1988</Bird_Date>
+		<exams>
+			<exam teacher="Iliev" ocenka="5" name="himiq">ok</exam>
+			<exam teacher="Ivanov" ocenka="6" name="bilogiq">ok</exam>
+			<exam teacher="Georgiev" ocenka="5" name="informatika">ok</exam>
+			<exam teacher="Petrov" ocenka="6" name="matematika">ok</exam>
+		</exams>
+	</Student>
+</Students>
