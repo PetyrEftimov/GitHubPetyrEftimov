@@ -21,7 +21,7 @@ void Operation:: checkCdFile(){
     pugi::xml_document doc;
     if (!doc.load_file("Cds.xml")) {
         cerr<<"file could not be readed " ;
-        }
+    }
     else{
         cout <<"File is ok"<<endl;
     }
@@ -76,7 +76,7 @@ void Operation:: workWithAttribute(){
     }
     pugi::xml_node nodeObjekt = doc2.child("CATALOG");
     pugi::xml_node cd = nodeObjekt.child("CD");
-  
+    
     
     for (pugi::xml_node cd = nodeObjekt.first_child(); cd;
          cd = cd.next_sibling("CD")) {
@@ -99,7 +99,7 @@ void Operation:: workWithAttribute(){
 }
 
 void Operation:: workWithAttributeValue(){
- 
+    
     pugi::xml_document doc4;
     
     if (!doc4.load_file("Cds.xml")) {
@@ -111,11 +111,11 @@ void Operation:: workWithAttributeValue(){
     
     pugi::xml_node nodeObjekt = doc4.child("CATALOG");
     pugi::xml_node cd = nodeObjekt.child("CD");
-   
-
-        
+    
+    
+    
     for (pugi::xml_node cd = nodeObjekt.child("CD"); cd;
-             cd = cd.next_sibling("CD")) {
+         cd = cd.next_sibling("CD")) {
         
         cout<<";;;;";
         
@@ -125,12 +125,12 @@ void Operation:: workWithAttributeValue(){
         cout << ", ??? '" << cd.child_value("ARTIST")
         << "'\n";
         
-        }
+    }
 }
 
 void Operation:: findChildByAttribute(){
     pugi::xml_document doc5;
- 
+    
     if (!doc5.load_file("Cds.xml")) {
         cerr<<"file could not be readed " ;
     }
@@ -141,8 +141,8 @@ void Operation:: findChildByAttribute(){
     }
     
     pugi::xml_node nodeObjekt = doc5.child("CATALOG");
-   // pugi::xml_node cd = nodeObjekt.child("CD");
-
+    // pugi::xml_node cd = nodeObjekt.child("CD");
+    
     for (pugi::xml_node cd = nodeObjekt.child("CD");cd;cd = cd.next_sibling("CD")) {
         
         
@@ -174,8 +174,8 @@ void Operation:: changeModify(){
     else{
         cout << "File Found "<<endl;
     }
-        
-        
+    
+    
     
     // tag::node[]
     pugi::xml_node node = doc5.child("node");
@@ -290,8 +290,8 @@ void Operation:: createNewXmlDocWithCode(){
         cout <<"------------" <<"Name " << student.child("Name").text().as_string()<<"Tel" <<student.child("Tel").text().as_string()<<endl;
     }
     
-  //ciklene po vytreshni chaildove
-  // display all attribute
+    //ciklene po vytreshni chaildove
+    // display all attribute
     for (pugi::xml_node student = singleStudent; student; student=student.next_sibling("Student")) {
         for (pugi::xml_node  exam = student.child("exams").child("exam") ; exam; exam = exam.next_sibling("exam")) {
             for (pugi::xml_attribute attr = exam.first_attribute(); attr; attr = attr.next_attribute()) {
@@ -345,12 +345,12 @@ void Operation::readFromVectorWriteToBinFile(){
     
     vector<Cd>v_cds;
     //child example//
-      // Cd vecPtr;
+    // Cd vecPtr;
     Cd cd1;
     
     for (pugi::xml_node cd = nodeObjekt.child("CD");cd;cd = cd.next_sibling("CD")) {
         
-       
+        
         
         Cd cd1;
         
@@ -361,30 +361,50 @@ void Operation::readFromVectorWriteToBinFile(){
         v_cds.push_back(cd1);
         
     }
-
     
-//    
-//    for (int i = 0 ;i < v_cds.size(); i++) {
-//        title = v_cds.at(i)->getTitle();
-//        artist = v_cds.at(i)->getArtist();
-//        price = v_cds.at(i)->getPrice();
-//        outCdFile <<" "<<title<<" "<<artist<<" "<<price;
-//    }
-//
+    
+    //
+    //    for (int i = 0 ;i < v_cds.size(); i++) {
+    //        title = v_cds.at(i)->getTitle();
+    //        artist = v_cds.at(i)->getArtist();
+    //        price = v_cds.at(i)->getPrice();
+    //        outCdFile <<" "<<title<<" "<<artist<<" "<<price;
+    //    }
+    //
     
     
     for (int i = 0 ;i < v_cds.size(); i++) {
         title = v_cds.at(i).getTitle();
         artist = v_cds.at(i).getArtist();
         price = v_cds.at(i).getPrice();
-       // outCdFile <<title<<" "<<artist<<" "<<price;
+        // outCdFile <<title<<" "<<artist<<" "<<price;
         
         
         outCdFile<< setw(13) <<"  "<< title<< setw(10)<<"  "<<artist<<setw(13)<<"  "<<price<<endl;
         
         
-    
         
+        
+    }
+    
+}
+
+void Operation:: iteratorExample(){
+    pugi::xml_document doc;
+    if (!doc.load_file("Cds.xml")) {
+        cerr<<"file could not be readed " ;
+    }
+    else{
+        cout <<"File is ok"<<endl;
+    }
+    
+    pugi::xml_node nodeObjekt = doc.child("CATALOG");
+    
+    
+    for (pugi::xml_node_iterator it = nodeObjekt.begin(); it != nodeObjekt.end(); ++it) {
+        
+        cout<<"--"<<   it->child_value("TITLE");
+        cout<< it->child("TITLE").parent().next_sibling("CD").child_value("TITLE");
     }
     
 }
@@ -404,4 +424,4 @@ void Operation::readFromVectorWriteToBinFile(){
 
 
 
- Operation operation1;
+Operation operation1;
