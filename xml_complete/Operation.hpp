@@ -33,7 +33,6 @@ public:
     void saveToFile();
     void createNewXmlDocWithCode();
     void readFromVectorWriteToBinFile();
-    void iteratorExample();
     
 private:
     vector<Cd*>v_cds;
