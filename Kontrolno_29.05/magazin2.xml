@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<MAGAZIN2>
+    <ARTIKULI>
+        <NAME>TV</NAME>
+        <BRAND>SONY</BRAND>
+        <MODEL>4K</MODEL>
+        <PRICE>2000</PRICE>
+        <SOLDQUANTITY>8</SOLDQUANTITY>
+    </ARTIKULI>
+    <ARTIKULI>
+        <NAME>TELEFON</NAME>
+        <BRAND>IPHONE</BRAND>
+        <MODEL>4K</MODEL>
+        <PRICE>1000</PRICE>
+        <SOLDQUANTITY>6</SOLDQUANTITY>
+    </ARTIKULI>
+    <ARTIKULI>
+        <NAME>PERALNQ</NAME>
+        <BRAND>SAMSUNG</BRAND>
+        <MODEL>4K</MODEL>
+        <PRICE>3000</PRICE>
+        <SOLDQUANTITY>3</SOLDQUANTITY>
+    </ARTIKULI>
+</MAGAZIN2>

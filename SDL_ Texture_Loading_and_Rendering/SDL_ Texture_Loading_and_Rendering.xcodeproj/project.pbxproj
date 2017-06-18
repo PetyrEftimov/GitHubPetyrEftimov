@@ -1,0 +1,279 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B727A9711EDF2CFA00692C4F /* 07_texture_loading_and_rendering.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B727A96F1EDF2CFA00692C4F /* 07_texture_loading_and_rendering.cpp */; };
+		B727A9751EDF2D3B00692C4F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B727A9731EDF2D3B00692C4F /* SDL2.framework */; };
+		B727A9761EDF2D3B00692C4F /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B727A9741EDF2D3B00692C4F /* SDL2_image.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B727A9631EDF2B6400692C4F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B727A9651EDF2B6400692C4F /* SDL_ Texture_Loading_and_Rendering */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "SDL_ Texture_Loading_and_Rendering"; sourceTree = BUILT_PRODUCTS_DIR; };
+		B727A96F1EDF2CFA00692C4F /* 07_texture_loading_and_rendering.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 07_texture_loading_and_rendering.cpp; sourceTree = "<group>"; };
+		B727A9701EDF2CFA00692C4F /* texture.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = texture.png; sourceTree = "<group>"; };
+		B727A9731EDF2D3B00692C4F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		B727A9741EDF2D3B00692C4F /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B727A9621EDF2B6400692C4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B727A9751EDF2D3B00692C4F /* SDL2.framework in Frameworks */,
+				B727A9761EDF2D3B00692C4F /* SDL2_image.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B727A95C1EDF2B6400692C4F = {
+			isa = PBXGroup;
+			children = (
+				B727A9671EDF2B6400692C4F /* SDL_ Texture_Loading_and_Rendering */,
+				B727A9661EDF2B6400692C4F /* Products */,
+				B727A9721EDF2D3B00692C4F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B727A9661EDF2B6400692C4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B727A9651EDF2B6400692C4F /* SDL_ Texture_Loading_and_Rendering */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B727A9671EDF2B6400692C4F /* SDL_ Texture_Loading_and_Rendering */ = {
+			isa = PBXGroup;
+			children = (
+				B727A9701EDF2CFA00692C4F /* texture.png */,
+				B727A96F1EDF2CFA00692C4F /* 07_texture_loading_and_rendering.cpp */,
+			);
+			path = "SDL_ Texture_Loading_and_Rendering";
+			sourceTree = "<group>";
+		};
+		B727A9721EDF2D3B00692C4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B727A9731EDF2D3B00692C4F /* SDL2.framework */,
+				B727A9741EDF2D3B00692C4F /* SDL2_image.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B727A9641EDF2B6400692C4F /* SDL_ Texture_Loading_and_Rendering */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B727A96C1EDF2B6400692C4F /* Build configuration list for PBXNativeTarget "SDL_ Texture_Loading_and_Rendering" */;
+			buildPhases = (
+				B727A9611EDF2B6400692C4F /* Sources */,
+				B727A9621EDF2B6400692C4F /* Frameworks */,
+				B727A9631EDF2B6400692C4F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "SDL_ Texture_Loading_and_Rendering";
+			productName = "SDL_ Texture_Loading_and_Rendering";
+			productReference = B727A9651EDF2B6400692C4F /* SDL_ Texture_Loading_and_Rendering */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B727A95D1EDF2B6400692C4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Pepi;
+				TargetAttributes = {
+					B727A9641EDF2B6400692C4F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B727A9601EDF2B6400692C4F /* Build configuration list for PBXProject "SDL_ Texture_Loading_and_Rendering" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B727A95C1EDF2B6400692C4F;
+			productRefGroup = B727A9661EDF2B6400692C4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B727A9641EDF2B6400692C4F /* SDL_ Texture_Loading_and_Rendering */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B727A9611EDF2B6400692C4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B727A9711EDF2CFA00692C4F /* 07_texture_loading_and_rendering.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B727A96A1EDF2B6400692C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B727A96B1EDF2B6400692C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B727A96D1EDF2B6400692C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B727A96E1EDF2B6400692C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B727A9601EDF2B6400692C4F /* Build configuration list for PBXProject "SDL_ Texture_Loading_and_Rendering" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B727A96A1EDF2B6400692C4F /* Debug */,
+				B727A96B1EDF2B6400692C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B727A96C1EDF2B6400692C4F /* Build configuration list for PBXNativeTarget "SDL_ Texture_Loading_and_Rendering" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B727A96D1EDF2B6400692C4F /* Debug */,
+				B727A96E1EDF2B6400692C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B727A95D1EDF2B6400692C4F /* Project object */;
+}

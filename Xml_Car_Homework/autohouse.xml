@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<AUTOHOUSE>
+    <CAR>
+        <BRAND ID="1" FUEL="DIESEL" >SUBARU</BRAND>
+        <MODEL COLOR="RED" >IMPRZA</MODEL>
+        <PRICE>20000</PRICE>
+    </CAR>
+    <CAR>
+        <BRAND ID="2" FUEL="BENZIN" >SUBARU</BRAND>
+        <MODEL COLOR="BLU" >OUTBACK</MODEL>
+        <PRICE>10000</PRICE>
+    </CAR>
+</AUTOHOUSE>

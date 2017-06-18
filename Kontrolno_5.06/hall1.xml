@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<HALL>
+    <GAME>
+        <ID>1000</ID>
+        <NAME>ROULETTE</NAME>
+        <LEVEL>2</LEVEL>
+        <STARTCREDIT>2000</STARTCREDIT>
+        <ENDCREDIT>500</ENDCREDIT>
+    </GAME>
+    <GAME>
+        <ID>1000</ID>
+        <NAME>ROULETTE</NAME>
+        <LEVEL>2</LEVEL>
+        <STARTCREDIT>1900</STARTCREDIT>
+        <ENDCREDIT>500</ENDCREDIT>
+    </GAME>
+    <GAME>
+        <ID>1000</ID>
+        <NAME>POKER</NAME>
+        <LEVEL>2</LEVEL>
+        <STARTCREDIT>1800</STARTCREDIT>
+        <ENDCREDIT>500</ENDCREDIT>
+    </GAME>
+</HALL>

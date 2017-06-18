@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<ITEMS>
+    <ITEM>
+        <NAME>TV</NAME>
+        <BRAND>SONY</BRAND>
+        <MODEL>4K</MODEL>
+        <QUANTITY>3</QUANTITY>
+        <PRICE>1000</PRICE>
+    </ITEM>
+    <ITEM>
+        <NAME>PS4</NAME>
+        <BRAND>SONY</BRAND>
+        <MODEL>PRO</MODEL>
+        <QUANTITY>2</QUANTITY>
+        <PRICE>800</PRICE>
+    </ITEM>
+    <ITEM>
+        <NAME>PS4</NAME>
+        <BRAND>VR</BRAND>
+        <MODEL>FIRST</MODEL>
+        <QUANTITY>1</QUANTITY>
+        <PRICE>800</PRICE>
+    </ITEM>
+    <ITEM>
+        <NAME>IPHONE</NAME>
+        <BRAND>APPLE</BRAND>
+        <MODEL>IPHONE7</MODEL>
+        <QUANTITY>4</QUANTITY>
+        <PRICE>1200</PRICE>
+    </ITEM>
+</ITEMS>

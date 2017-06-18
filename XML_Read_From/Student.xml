@@ -1,0 +1,20 @@
+<?xml version="1.0"?>
+<STUDENTS>
+    <STUDENT>
+        <FIRSTNAME>PEPI</FIRSTNAME>
+        <LASTNAME TEL="0889">EFTIMOV</LASTNAME>
+        <ID>123</ID>
+    </STUDENT>
+    UDENTS>
+    <STUDENT>
+        <FIRSTNAME>VIKI</FIRSTNAME>
+        <LASTNAME TEL="0885">PENEVA</LASTNAME>
+        <ID>123</ID>
+    </STUDENT>
+    UDENTS>
+    <STUDENT>
+        <FIRSTNAME>MUTO</FIRSTNAME>
+        <LASTNAME TEL="0888">MUTOV</LASTNAME>
+        <ID>123</ID>
+    </STUDENT>
+</STUDENTS>

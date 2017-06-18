@@ -1,0 +1,334 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B71CF6B41EE9B98B0040676B /* Mouse_Cordinates.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B71CF6B21EE9B98B0040676B /* Mouse_Cordinates.cpp */; };
+		B727A9D91EE16B9D00692C4F /* 17_mouse_events.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B727A9D81EE16B9D00692C4F /* 17_mouse_events.cpp */; };
+		B727A9DD1EE16BFC00692C4F /* SDL2_image.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B727A9DB1EE16BFC00692C4F /* SDL2_image.framework */; };
+		B727A9DE1EE16BFC00692C4F /* SDL2.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B727A9DC1EE16BFC00692C4F /* SDL2.framework */; };
+		B727AA6F1EE6C94200692C4F /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B727AA6E1EE6C94200692C4F /* main.cpp */; };
+		B727AA711EE6D79500692C4F /* SDL_ANIMATION.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B727AA701EE6D79500692C4F /* SDL_ANIMATION.cpp */; };
+		B727AA7F1EE71CD700692C4F /* Show_Png_At_Position_and_Size.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B727AA7E1EE71CD700692C4F /* Show_Png_At_Position_and_Size.cpp */; };
+		B727AA851EE7317200692C4F /* Chess.cpp in Sources */ = {isa = PBXBuildFile; fileRef = B727AA831EE7317200692C4F /* Chess.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B727A9CB1EE16B3700692C4F /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		B71CF6B21EE9B98B0040676B /* Mouse_Cordinates.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Mouse_Cordinates.cpp; path = ../Mouse_Cordinates.cpp; sourceTree = "<group>"; };
+		B71CF6B31EE9B98B0040676B /* Mouse_Cordinates.hpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.h; path = Mouse_Cordinates.hpp; sourceTree = "<group>"; };
+		B727A9CD1EE16B3700692C4F /* SDL_MOUSE_EVENTS */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = SDL_MOUSE_EVENTS; sourceTree = BUILT_PRODUCTS_DIR; };
+		B727A9D71EE16B9D00692C4F /* button1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = button1.png; sourceTree = "<group>"; };
+		B727A9D81EE16B9D00692C4F /* 17_mouse_events.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = 17_mouse_events.cpp; sourceTree = "<group>"; };
+		B727A9DB1EE16BFC00692C4F /* SDL2_image.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2_image.framework; path = ../../../../../Library/Frameworks/SDL2_image.framework; sourceTree = "<group>"; };
+		B727A9DC1EE16BFC00692C4F /* SDL2.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SDL2.framework; path = ../../../../../Library/Frameworks/SDL2.framework; sourceTree = "<group>"; };
+		B727AA6E1EE6C94200692C4F /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = ../main.cpp; sourceTree = "<group>"; };
+		B727AA701EE6D79500692C4F /* SDL_ANIMATION.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDL_ANIMATION.cpp; path = ../SDL_ANIMATION.cpp; sourceTree = "<group>"; };
+		B727AA721EE6DB3600692C4F /* Frame1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = Frame1.png; path = ../Frame1.png; sourceTree = "<group>"; };
+		B727AA731EE6DB3600692C4F /* frame9.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame9.png; path = ../frame9.png; sourceTree = "<group>"; };
+		B727AA741EE6DB3600692C4F /* frame8.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame8.png; path = ../frame8.png; sourceTree = "<group>"; };
+		B727AA751EE6DB3600692C4F /* frame5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame5.png; path = ../frame5.png; sourceTree = "<group>"; };
+		B727AA761EE6DB3600692C4F /* frame2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame2.png; path = ../frame2.png; sourceTree = "<group>"; };
+		B727AA771EE6DB3600692C4F /* frame12.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame12.png; path = ../frame12.png; sourceTree = "<group>"; };
+		B727AA781EE6DB3600692C4F /* frame11.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame11.png; path = ../frame11.png; sourceTree = "<group>"; };
+		B727AA791EE6DB3600692C4F /* frame10.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame10.png; path = ../frame10.png; sourceTree = "<group>"; };
+		B727AA7A1EE6DB3600692C4F /* frame4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame4.png; path = ../frame4.png; sourceTree = "<group>"; };
+		B727AA7B1EE6DB3600692C4F /* frame6.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame6.png; path = ../frame6.png; sourceTree = "<group>"; };
+		B727AA7C1EE6DB3600692C4F /* frame3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame3.png; path = ../frame3.png; sourceTree = "<group>"; };
+		B727AA7D1EE6DB3600692C4F /* frame7.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; name = frame7.png; path = ../frame7.png; sourceTree = "<group>"; };
+		B727AA7E1EE71CD700692C4F /* Show_Png_At_Position_and_Size.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Show_Png_At_Position_and_Size.cpp; path = ../Show_Png_At_Position_and_Size.cpp; sourceTree = "<group>"; };
+		B727AA801EE7315D00692C4F /* Chess.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Chess.jpg; path = ../Chess.jpg; sourceTree = "<group>"; };
+		B727AA811EE7315D00692C4F /* Chess_x.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Chess_x.jpg; path = ../Chess_x.jpg; sourceTree = "<group>"; };
+		B727AA821EE7315D00692C4F /* Chess_o.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = Chess_o.jpg; path = ../Chess_o.jpg; sourceTree = "<group>"; };
+		B727AA831EE7317200692C4F /* Chess.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Chess.cpp; path = ../Chess.cpp; sourceTree = "<group>"; };
+		B728D9311EF130D8007FFA1C /* beach.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; name = beach.jpg; path = ../beach.jpg; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B727A9CA1EE16B3700692C4F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B727A9DD1EE16BFC00692C4F /* SDL2_image.framework in Frameworks */,
+				B727A9DE1EE16BFC00692C4F /* SDL2.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B727A9C41EE16B3700692C4F = {
+			isa = PBXGroup;
+			children = (
+				B71CF6B31EE9B98B0040676B /* Mouse_Cordinates.hpp */,
+				B727A9CF1EE16B3700692C4F /* SDL_MOUSE_EVENTS */,
+				B727A9CE1EE16B3700692C4F /* Products */,
+				B727A9DA1EE16BFC00692C4F /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B727A9CE1EE16B3700692C4F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B727A9CD1EE16B3700692C4F /* SDL_MOUSE_EVENTS */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B727A9CF1EE16B3700692C4F /* SDL_MOUSE_EVENTS */ = {
+			isa = PBXGroup;
+			children = (
+				B727A9D71EE16B9D00692C4F /* button1.png */,
+				B727AA701EE6D79500692C4F /* SDL_ANIMATION.cpp */,
+				B727AA7E1EE71CD700692C4F /* Show_Png_At_Position_and_Size.cpp */,
+				B727A9D81EE16B9D00692C4F /* 17_mouse_events.cpp */,
+				B727AA721EE6DB3600692C4F /* Frame1.png */,
+				B727AA731EE6DB3600692C4F /* frame9.png */,
+				B71CF6B21EE9B98B0040676B /* Mouse_Cordinates.cpp */,
+				B728D9311EF130D8007FFA1C /* beach.jpg */,
+				B727AA831EE7317200692C4F /* Chess.cpp */,
+				B727AA801EE7315D00692C4F /* Chess.jpg */,
+				B727AA811EE7315D00692C4F /* Chess_x.jpg */,
+				B727AA821EE7315D00692C4F /* Chess_o.jpg */,
+				B727AA741EE6DB3600692C4F /* frame8.png */,
+				B727AA751EE6DB3600692C4F /* frame5.png */,
+				B727AA761EE6DB3600692C4F /* frame2.png */,
+				B727AA771EE6DB3600692C4F /* frame12.png */,
+				B727AA781EE6DB3600692C4F /* frame11.png */,
+				B727AA791EE6DB3600692C4F /* frame10.png */,
+				B727AA7A1EE6DB3600692C4F /* frame4.png */,
+				B727AA7B1EE6DB3600692C4F /* frame6.png */,
+				B727AA7C1EE6DB3600692C4F /* frame3.png */,
+				B727AA7D1EE6DB3600692C4F /* frame7.png */,
+				B727AA6E1EE6C94200692C4F /* main.cpp */,
+			);
+			path = SDL_MOUSE_EVENTS;
+			sourceTree = "<group>";
+		};
+		B727A9DA1EE16BFC00692C4F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B727A9DB1EE16BFC00692C4F /* SDL2_image.framework */,
+				B727A9DC1EE16BFC00692C4F /* SDL2.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B727A9CC1EE16B3700692C4F /* SDL_MOUSE_EVENTS */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B727A9D41EE16B3700692C4F /* Build configuration list for PBXNativeTarget "SDL_MOUSE_EVENTS" */;
+			buildPhases = (
+				B727A9C91EE16B3700692C4F /* Sources */,
+				B727A9CA1EE16B3700692C4F /* Frameworks */,
+				B727A9CB1EE16B3700692C4F /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SDL_MOUSE_EVENTS;
+			productName = SDL_MOUSE_EVENTS;
+			productReference = B727A9CD1EE16B3700692C4F /* SDL_MOUSE_EVENTS */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B727A9C51EE16B3700692C4F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Pepi;
+				TargetAttributes = {
+					B727A9CC1EE16B3700692C4F = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = B727A9C81EE16B3700692C4F /* Build configuration list for PBXProject "SDL_MOUSE_EVENTS" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = B727A9C41EE16B3700692C4F;
+			productRefGroup = B727A9CE1EE16B3700692C4F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B727A9CC1EE16B3700692C4F /* SDL_MOUSE_EVENTS */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B727A9C91EE16B3700692C4F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B727AA851EE7317200692C4F /* Chess.cpp in Sources */,
+				B71CF6B41EE9B98B0040676B /* Mouse_Cordinates.cpp in Sources */,
+				B727AA6F1EE6C94200692C4F /* main.cpp in Sources */,
+				B727AA7F1EE71CD700692C4F /* Show_Png_At_Position_and_Size.cpp in Sources */,
+				B727A9D91EE16B9D00692C4F /* 17_mouse_events.cpp in Sources */,
+				B727AA711EE6D79500692C4F /* SDL_ANIMATION.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		B727A9D21EE16B3700692C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		B727A9D31EE16B3700692C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 10.12;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		B727A9D51EE16B3700692C4F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		B727A9D61EE16B3700692C4F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(LOCAL_LIBRARY_DIR)/Frameworks",
+				);
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B727A9C81EE16B3700692C4F /* Build configuration list for PBXProject "SDL_MOUSE_EVENTS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B727A9D21EE16B3700692C4F /* Debug */,
+				B727A9D31EE16B3700692C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B727A9D41EE16B3700692C4F /* Build configuration list for PBXNativeTarget "SDL_MOUSE_EVENTS" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B727A9D51EE16B3700692C4F /* Debug */,
+				B727A9D61EE16B3700692C4F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B727A9C51EE16B3700692C4F /* Project object */;
+}

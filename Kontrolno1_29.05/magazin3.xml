@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<MAGAZIN3>
+    <ARTIKULI>
+        <NAME>TV</NAME>
+        <BRAND>TESI</BRAND>
+        <MODEL>4K</MODEL>
+        <PRICE>2000</PRICE>
+        <SOLDQUANTITY>3</SOLDQUANTITY>
+    </ARTIKULI>
+    <ARTIKULI>
+        <NAME>VLAGOABSORBATOR</NAME>
+        <BRAND>SONY</BRAND>
+        <MODEL>4K</MODEL>
+        <PRICE>1000</PRICE>
+        <SOLDQUANTITY>1</SOLDQUANTITY>
+    </ARTIKULI>
+    <ARTIKULI>
+        <NAME>PS4</NAME>
+        <BRAND>PIONEER</BRAND>
+        <MODEL>4K</MODEL>
+        <PRICE>3000</PRICE>
+        <SOLDQUANTITY>2</SOLDQUANTITY>
+    </ARTIKULI>
+</MAGAZIN3>

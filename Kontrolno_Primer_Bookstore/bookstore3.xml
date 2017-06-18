@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<BOOKSTORE>
+    <BOOK>
+        <NAME>STARWARS</NAME>
+        <AUTOR>LUCAS</AUTOR>
+        <PRICE SOLDBOOK="50" >22</PRICE>
+    </BOOK>
+    <BOOK>
+        <NAME>PROMETEUS</NAME>
+        <AUTOR>SCOTT</AUTOR>
+        <PRICE SOLDBOOK="15" >20</PRICE>
+    </BOOK>
+    <BOOK>
+        <NAME>JOURNEY_OUT_OF_BODY</NAME>
+        <AUTOR>MONROE</AUTOR>
+        <PRICE SOLDBOOK="10" >30</PRICE>
+    </BOOK>
+</BOOKSTORE>
