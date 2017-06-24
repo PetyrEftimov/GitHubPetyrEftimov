@@ -1,23 +1,18 @@
-/*This source code copyrighted by Lazy Foo' Productions (2004-2015)
- and may not be redistributed without written permission.*/
 
-//Using SDL, SDL_image, SDL_ttf, standard IO, math, and strings
+//Using SDL, SDL_image, standard IO, and strings
 #include <SDL2/SDL.h>
 #include <SDL2_image/SDL_image.h>
-#include <SDL2_ttf/SDL_ttf.h>
 #include <stdio.h>
 #include <string>
-#include <cmath>
 #include <iostream>
-
 using namespace std;
 
 //Screen dimension constants
 const int SCREEN_WIDTH = 640;
 const int SCREEN_HEIGHT = 480;
 
-static const int buttonX = 0;
-static const int buttonY = 300;
+//Particle count
+const int TOTAL_PARTICLES = 20;
 
 //Texture wrapper class
 class LTexture
@@ -32,8 +27,10 @@ public:
     //Loads image at specified path
     bool loadFromFile( std::string path );
     
+#ifdef _SDL_TTF_H
     //Creates image from font string
     bool loadFromRenderedText( std::string textureText, SDL_Color textColor );
+#endif
     
     //Deallocates texture
     void free();
@@ -53,8 +50,8 @@ public:
     //Gets image dimensions
     int getWidth();
     int getHeight();
-    void setWidth(int);
-    void setheight(int);
+        void setWidth(int);
+        void setheight(int);
     
 private:
     //The actual hardware texture
@@ -63,6 +60,74 @@ private:
     //Image dimensions
     int mWidth;
     int mHeight;
+};
+
+class Particle
+{
+public:
+    //Initialize position and animation
+    Particle( int x, int y );
+    
+    //Shows the particle
+    void render();
+    
+    //Checks if particle is dead
+    bool isDead();
+    
+private:
+    //Offsets
+    int mPosX, mPosY;
+    
+    //Current frame of animation
+    int mFrame;
+    
+    //Type of particle
+    LTexture *mTexture;
+};
+
+
+//The dot that will move around on the screen
+class Dot
+{
+public:
+    //The dimensions of the dot
+    static const int DOT_WIDTH = 20;
+    static const int DOT_HEIGHT = 20;
+    
+    void setMPosX(int mPosX);
+    void setMPosY(int mPosY);
+    
+    
+    //Maximum axis velocity of the dot
+    static const int DOT_VEL = 1;
+    
+    //Initializes the variables and allocates particles
+    Dot();
+    
+    //Deallocates particles
+    ~Dot();
+    
+    //Takes key presses and adjusts the dot's velocity
+    void handleEvent( SDL_Event& e );
+    
+    //Moves the dot
+    void move();
+    
+    //Shows the dot on the screen
+    void render();
+    
+private:
+    //The particles
+    Particle* particles[ TOTAL_PARTICLES ];
+    
+    //Shows the particles
+    void renderParticles();
+    
+    //The X and Y offsets of the dot
+    int mPosX, mPosY;
+    
+    //The velocity of the dot
+    int mVelX, mVelY;
 };
 
 //Starts up SDL and creates window
@@ -80,14 +145,14 @@ SDL_Window* gWindow = NULL;
 //The window renderer
 SDL_Renderer* gRenderer = NULL;
 
-//Globally used font
-TTF_Font *gFont = NULL;
-
-//Rendered texture
-LTexture gTextTexture;
+//Scene textures
 LTexture gBackground;
-LTexture gButton;
-LTexture gBackgroundNew;
+LTexture gDotTexture;
+LTexture gRedTexture;
+LTexture gGreenTexture;
+LTexture gBlueTexture;
+LTexture gShimmerTexture;
+LTexture gSlider;
 LTexture::LTexture()
 {
     //Initialize
@@ -143,6 +208,7 @@ bool LTexture::loadFromFile( std::string path )
     return mTexture != NULL;
 }
 
+#ifdef _SDL_TTF_H
 bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColor )
 {
     //Get rid of preexisting texture
@@ -150,11 +216,7 @@ bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColo
     
     //Render text surface
     SDL_Surface* textSurface = TTF_RenderText_Solid( gFont, textureText.c_str(), textColor );
-    if( textSurface == NULL )
-    {
-        printf( "Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError() );
-    }
-    else
+    if( textSurface != NULL )
     {
         //Create texture from surface pixels
         mTexture = SDL_CreateTextureFromSurface( gRenderer, textSurface );
@@ -172,10 +234,16 @@ bool LTexture::loadFromRenderedText( std::string textureText, SDL_Color textColo
         //Get rid of old surface
         SDL_FreeSurface( textSurface );
     }
+    else
+    {
+        printf( "Unable to render text surface! SDL_ttf Error: %s\n", TTF_GetError() );
+    }
+    
     
     //Return success
     return mTexture != NULL;
 }
+#endif
 
 void LTexture::free()
 {
@@ -233,6 +301,7 @@ int LTexture::getHeight()
     return mHeight;
 }
 
+
 void LTexture::setWidth( int width)
 {
     mWidth = width;
@@ -242,6 +311,233 @@ void LTexture::setheight(int height)
     mHeight = height;
 }
 
+const int SLIDER_VEL = 5 ;
+int veloX = 0 ;
+
+void sliderEvent(SDL_Event &e)
+{
+    //If a key was pressed
+    if( e.type == SDL_KEYDOWN && e.key.repeat == 0 )
+    {
+        //Adjust the velocity
+        switch( e.key.keysym.sym )
+        {
+                
+            case SDLK_LEFT: veloX -= SLIDER_VEL; break;
+            case SDLK_RIGHT: veloX += SLIDER_VEL; break;
+        }
+    }
+    //If a key was released
+    else if( e.type == SDL_KEYUP && e.key.repeat == 0 )
+    {
+        //Adjust the velocity
+        switch( e.key.keysym.sym )
+        {
+                
+            case SDLK_LEFT: veloX += SLIDER_VEL; break;
+            case SDLK_RIGHT: veloX -= SLIDER_VEL; break;
+        }
+    }
+    
+    
+    
+}
+int posX = 0;
+
+void sliderMove()
+{
+    //Move the dot left or right
+    posX += veloX;
+    
+    //If the dot went too far to the left or right
+    if( ( posX < 0 ) || ( posX + 100 > SCREEN_WIDTH ) )
+    {
+        //Move back
+        posX -= veloX;
+    }
+    
+    
+}
+
+
+Particle::Particle( int x, int y )
+{
+    //Set offsets
+    mPosX = x - 5 + ( rand() % 25 );
+    mPosY = y - 5 + ( rand() % 25 );
+    
+    //Initialize animation
+    mFrame = rand() % 5;
+    
+    //Set type
+    switch( rand() % 3 )
+    {
+        case 0: mTexture = &gRedTexture; break;
+        case 1: mTexture = &gGreenTexture; break;
+        case 2: mTexture = &gBlueTexture; break;
+    }
+}
+
+void Particle::render()
+{
+    //Show image
+    mTexture->render( mPosX, mPosY );
+    
+    //Show shimmer
+    if( mFrame % 2 == 0 )
+    {
+        gShimmerTexture.render( mPosX, mPosY );
+    }
+    
+    //Animate
+    mFrame++;
+}
+
+bool Particle::isDead()
+{
+    return mFrame > 10;
+}
+
+Dot::Dot()
+{
+    //Initialize the offsets
+    mPosX = 0;
+    mPosY = 0;
+    
+    //Initialize the velocity
+    mVelX = 0;
+    mVelY = 0;
+    
+    //Initialize particles
+    for( int i = 0; i < TOTAL_PARTICLES; ++i )
+    {
+        particles[ i ] = new Particle( mPosX, mPosY );
+    }
+}
+
+void Dot:: setMPosX(int PosX)
+{
+    mPosX = PosX;
+}
+void Dot:: setMPosY(int PosY)
+{
+    mPosY = PosY;
+}
+
+
+Dot::~Dot()
+{
+    //Delete particles
+    for( int i = 0; i < TOTAL_PARTICLES; ++i )
+    {
+        delete particles[ i ];
+    }
+}
+
+void Dot::handleEvent( SDL_Event& e )
+{
+    //If a key was pressed
+    if( e.type == SDL_KEYDOWN && e.key.repeat == 0 )
+    {
+        //Adjust the velocity
+        switch( e.key.keysym.sym )
+        {
+            case SDLK_UP: mVelY -= DOT_VEL; break;
+            case SDLK_DOWN: mVelY += DOT_VEL; break;
+            case SDLK_LEFT: mVelX -= DOT_VEL; break;
+            case SDLK_RIGHT: mVelX += DOT_VEL; break;
+        }
+    }
+    //If a key was released
+    else if( e.type == SDL_KEYUP && e.key.repeat == 0 )
+    {
+        //Adjust the velocity
+        switch( e.key.keysym.sym )
+        {
+            case SDLK_UP: mVelY += DOT_VEL; break;
+            case SDLK_DOWN: mVelY -= DOT_VEL; break;
+            case SDLK_LEFT: mVelX += DOT_VEL; break;
+            case SDLK_RIGHT: mVelX -= DOT_VEL; break;
+        }
+    }
+}
+
+int velX = 5;
+int velY = 5;
+void Dot::move()
+{
+    
+    //Move the dot left or right
+    mPosX += velX;
+    
+    if (mPosX+DOT_WIDTH > 640)
+    {
+        velX = -5;
+    }
+    
+    if (mPosX+DOT_WIDTH < 0)
+    {
+        velX = 5;
+    }
+    mPosY += velY;
+    
+//    if (mPosY+DOT_HEIGHT > 480)
+//    {
+//        velY = -5 ;
+//    }
+    
+    if (mPosY+DOT_HEIGHT < 0 )
+    {
+        velY = 5;
+    }
+    
+    
+    //mposX i mposY sa na topche
+    // posX  e slider . posx + 100 e slider
+    
+    if (mPosY + DOT_HEIGHT >= 460
+        && mPosX >= posX
+        && mPosX <= posX+100)
+    {
+         velY = -5 ;
+    }
+    
+    if (mPosY > 480)
+    {
+        exit(1);
+    }
+    
+
+}
+
+void Dot::render()
+{
+    //Show the dot
+    gDotTexture.render( mPosX, mPosY );
+    
+    //Show particles on top of dot
+    renderParticles();
+}
+
+void Dot::renderParticles()
+{
+    //Go through particles
+    for( int i = 0; i < TOTAL_PARTICLES; ++i )
+    {
+        //Delete and replace dead particles
+        if( particles[ i ]->isDead() )
+        {
+            delete particles[ i ];
+            particles[ i ] = new Particle( mPosX, mPosY );
+        }
+    }
+    
+    //Show particles
+    for( int i = 0; i < TOTAL_PARTICLES; ++i )
+    {
+        particles[ i ]->render();
+    }
+}
 
 bool init()
 {
@@ -271,7 +567,7 @@ bool init()
         }
         else
         {
-            //Create vsynced renderer for window
+            //Create renderer for window
             gRenderer = SDL_CreateRenderer( gWindow, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC );
             if( gRenderer == NULL )
             {
@@ -290,13 +586,6 @@ bool init()
                     printf( "SDL_image could not initialize! SDL_image Error: %s\n", IMG_GetError() );
                     success = false;
                 }
-                
-                //Initialize SDL_ttf
-                if( TTF_Init() == -1 )
-                {
-                    printf( "SDL_ttf could not initialize! SDL_ttf Error: %s\n", TTF_GetError() );
-                    success = false;
-                }
             }
         }
     }
@@ -308,46 +597,59 @@ bool loadMedia()
 {
     //Loading success flag
     bool success = true;
-    if( !gBackground.loadFromFile( "moon3.jpg" ) )
-            {
-                printf( "Failed to load texture!\n" );
-                success = false;
-            }
-    if( !gButton.loadFromFile( "moon4.jpg" ) )
+    
+    //Load dot texture
+    if( !gDotTexture.loadFromFile( "dot.bmp" ) )
     {
-        printf( "Failed to load texture!\n" );
+        printf( "Failed to load dot texture!\n" );
         success = false;
     }
     
-    gButton.setWidth(SCREEN_WIDTH/3);
-    gButton.setheight(SCREEN_HEIGHT - buttonY);
-    
-    if( !gBackgroundNew.loadFromFile( "moon6.jpg" ) )
+    //Load red texture
+    if( !gRedTexture.loadFromFile( "red.bmp" ) )
     {
-        printf( "Failed to load texture!\n" );
+        printf( "Failed to load red texture!\n" );
         success = false;
     }
     
-    gBackgroundNew.setWidth(SCREEN_WIDTH);
-    gBackgroundNew.setheight(SCREEN_HEIGHT);
-
-    //Open the font
-    gFont = TTF_OpenFont( "lazy.ttf", 28 );
-    if( gFont == NULL )
+    //Load green texture
+    if( !gGreenTexture.loadFromFile( "green.bmp" ) )
     {
-        printf( "Failed to load lazy font! SDL_ttf Error: %s\n", TTF_GetError() );
+        printf( "Failed to load green texture!\n" );
         success = false;
     }
-    else
+    
+    //Load blue texture
+    if( !gBlueTexture.loadFromFile( "blue.bmp" ) )
     {
-        //Render text
-        SDL_Color textColor = { 255,255, 255 };
-        if( !gTextTexture.loadFromRenderedText( "Pepi First TTF", textColor ) )
-        {
-            printf( "Failed to render text texture!\n" );
-            success = false;
-        }
+        printf( "Failed to load blue texture!\n" );
+        success = false;
     }
+    
+    //Load shimmer texture
+    if( !gShimmerTexture.loadFromFile( "shimmer.bmp" ) )
+    {
+        printf( "Failed to load shimmer texture!\n" );
+        success = false;
+    }
+    
+    if( !gBackground.loadFromFile( "moon5.jpg" ) )
+    {
+        printf( "Failed to load shimmer texture!\n" );
+        success = false;
+    }
+    if( !gSlider.loadFromFile( "Slider.png" ) )
+    {
+        printf( "Failed to load shimmer texture!\n" );
+        success = false;
+    }
+    
+    
+    //Set texture transparency
+    gRedTexture.setAlpha( 192 );
+    gGreenTexture.setAlpha( 192 );
+    gBlueTexture.setAlpha( 192 );
+    gShimmerTexture.setAlpha( 192 );
     
     return success;
 }
@@ -355,23 +657,30 @@ bool loadMedia()
 void close()
 {
     //Free loaded images
-    gTextTexture.free();
-    
-    //Free global font
-    TTF_CloseFont( gFont );
-    gFont = NULL;
+    gDotTexture.free();
+    gRedTexture.free();
+    gGreenTexture.free();
+    gBlueTexture.free();
+    gShimmerTexture.free();
+    gBackground.free();
     
     //Destroy window	
     SDL_DestroyRenderer( gRenderer );
     SDL_DestroyWindow( gWindow );
     gWindow = NULL;
     gRenderer = NULL;
+   
     
     //Quit SDL subsystems
-    TTF_Quit();
     IMG_Quit();
     SDL_Quit();
 }
+
+
+
+
+
+
 
 int main( int argc, char* args[] )
 {
@@ -394,24 +703,14 @@ int main( int argc, char* args[] )
             
             //Event handler
             SDL_Event e;
-            int x ,  y = 0;
-            
-            unsigned int lastTime = 0, currentTime;
-            
-            bool drawNew = false;
+        
+            gSlider.render(0, 480);
+            //The dot that will be moving around on the screen
+            Dot dot;
             
             //While application is running
             while( !quit )
             {
-                currentTime = SDL_GetTicks();
-                cout<<SDL_GetTicks()<<endl;
-                
-                if (currentTime > lastTime + 2000)
-                {
-                    lastTime = currentTime;
-                    drawNew = !drawNew;
-                }
-                
                 //Handle events on queue
                 while( SDL_PollEvent( &e ) != 0 )
                 {
@@ -421,30 +720,34 @@ int main( int argc, char* args[] )
                         quit = true;
                     }
                     
-                    SDL_GetMouseState(&x, &y);
+                    //Handle input for the dot
+                    dot.handleEvent( e );
+                    sliderEvent(e);
+
                     
-                    if (e.type == SDL_MOUSEBUTTONDOWN) {
-                        if (x > buttonX && x < buttonX + gButton.getWidth() &&
-                            y > buttonY && buttonY + gButton.getHeight())
-                        {
-                            drawNew = !drawNew;
-                        }
-                    }
+                   
                 }
+            
+                    
+                
+                //Move the dot
+                dot.move();
+                sliderMove();
+               
                 
                 //Clear screen
                 SDL_SetRenderDrawColor( gRenderer, 0xFF, 0xFF, 0xFF, 0xFF );
                 SDL_RenderClear( gRenderer );
-            
-                if (drawNew)
-                    gBackgroundNew.render(0, 0,NULL);
-                else
-                    gBackground.render( 0, 0, NULL );
                 
-                //Render current frame
-                gButton.render(buttonX, buttonY);
+                                gBackground.setWidth(SCREEN_WIDTH);
+                                gBackground.setheight(SCREEN_HEIGHT);
+                                //Render background
+                                gBackground.render( 0, 0, NULL );
                 
-                gTextTexture.render( ( SCREEN_WIDTH *0 ) , (( SCREEN_HEIGHT* 2) / 3 ));
+                
+                //Render objects
+                dot.render();
+                gSlider.render(posX, 450);
                 
                 //Update screen
                 SDL_RenderPresent( gRenderer );
@@ -457,3 +760,5 @@ int main( int argc, char* args[] )
     
     return 0;
 }
+
+
